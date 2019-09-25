@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Hello World</title>
+</head>
+
+<body>
+    <div id="application-root">
+
+    </div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script type="text/babel">
+        function App(props) {
+            console.log(props)
+            return (
+                <div>
+                    <Header />
+                    <Main />
+                    <Section />
+                </div>
+            );
+        }
+
+        function Header() {
+            return (
+                <header>
+                    <h1>Sally Student</h1>
+                </header>
+            )
+        }
+
+        function Main() {
+            return (
+                <main>
+                <h2>Education</h2>
+                <UnorderedList />
+
+                <h2>Employment History</h2>
+                    <h3>Vavlve Corp.</h3>
+                <dl>
+                <dt>Lead Game Designer - 2004 - 2010</dt>
+                <dd>
+                <br />Responsible for all the companion cube stuff, and the paint mechanics!
+                </dd>
+                </dl>
+                    <h3>Amazon</h3>
+                <dl>
+                <dt>Cloud Engineer - 2011 - 2019</dt>
+                <dd>
+                <br />Even I don't totally get it. It's the cloud, ya know?
+                </dd>
+                </dl>
+                </main>
+            )
+        }
+
+        function Section() {
+            return (
+                <section>
+                <h3>Contact Info</h3>
+                    <address> 
+                    <p>Sally Student Esq.</p>
+                    <a href="tel:+1234567890">(123)456-7890</a>
+                    <br />
+                    <br />
+                    <a href="mailto:Sally.Student1989@fakemail.com">Sally.Student1989@fakemail.com</a>
+                    </address>
+                    <br />
+                    <img src="./BroadCity.jpg" width="250" alt="bad boss lady in yellow sweater with zebras printed on it, arms crossed, face of a killer, her eyes speak of a dark history This image leaves you feeling assured of her competence" />
+                </section>
+            )
+        }
+
+        function UnorderedList() {
+            return (
+                <ul>          
+                    <li> B.S @ MIT </li>
+                    <li> M.S.C.J @ Harvard Law </li>
+                    <li> B.D @ Brigham Young University </li>
+                    <li> Coding bootcamp @ Bloc </li> 
+                </ul>  
+                    
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#application-root')
+        );
+    </script>
+
+</body>
+
+</html>
